@@ -25,6 +25,6 @@
 /.nb-gradle/
 
 ### 自定义git拦截 ###
-/house-biz/target/
-/house-common/target/
-/house-web/target/
+/hero-biz/target/
+/hero-common/target/
+/hero-web/target/
