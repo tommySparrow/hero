@@ -2,13 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.house.hero.mapper.MyOrderMapper" >
 
-  <resultMap id="BaseResultMap" type="com.house.hero.common.bean.MyOrder" >
+  <resultMap id="BaseResultMapForOrder" type="com.house.hero.common.bean.MyOrder" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
 
+  <resultMap id="BaseResultMapForOrderDetail" type="com.house.hero.common.bean.OrderDetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="total_price" property="totalPrice" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
 <!--  一对一 -->
   <resultMap id="OneToOneMap" type="com.house.hero.common.bean.MyOrder" >
     <id column="id" property="id" jdbcType="INTEGER" />
@@ -22,6 +29,15 @@
     </association>
   </resultMap>
 
+  <!--  一对多 -->
+  <!--extends 继承现有resultMap-->
+  <resultMap id="OneToManyMap" type="com.house.hero.common.bean.MyOrder" extends="OneToOneMap">
+
+    <collection property="orderDetails" ofType="com.house.hero.common.bean.OrderDetail" autoMapping="true"
+                column="id" select="selectOrderDetailsById">
+    </collection>
+  </resultMap>
+
   <sql id="Base_Column_List_Order" >
     mo.id, mo.user_id, mo.content, mo.create_time
   </sql>
@@ -30,6 +46,10 @@
     u.id, u.user_name, u.password, u.create_time
   </sql>
 
+  <sql id="Base_Column_List_OrderDetail">
+    od.id, od.total_price, od.status, od.create_time,od.order_id
+  </sql>
+  <!--一对一查询-->
   <select id="queryOrderAndUserByOrderId" resultMap="OneToOneMap" parameterType="java.lang.Integer" >
     select
     <include refid="Base_Column_List_Order" />,
@@ -39,4 +59,27 @@
     on mo.user_id = u.id
     where mo.id = #{id,jdbcType=INTEGER}
   </select>
+
+  <!--一对多查询-->
+  <select id="queryOrderAndUserAndOrderDetailsByOrderId" resultMap="OneToManyMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List_Order" />,
+    <include refid="Base_Column_List_User" />,
+    <include refid="Base_Column_List_OrderDetail" />
+    from my_order mo
+    left join user u
+    on mo.user_id = u.id
+    left join order_detail od
+    on mo.id = od.order_id
+  </select>
+
+  <select id="selectOrderDetailsById" resultMap="BaseResultMapForOrderDetail" parameterType="java.lang.Integer">
+    SELECT
+    <include refid="Base_Column_List_OrderDetail"/>
+    FROM
+    order_detail od
+    WHERE
+    od.order_id = #{id,jdbcType=INTEGER}
+  </select>
+  <!-- 一对多查询 -->
 </mapper>

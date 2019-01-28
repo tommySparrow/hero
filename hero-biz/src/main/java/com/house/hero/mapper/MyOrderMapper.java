@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MyOrderMapper extends com.github.abel533.mapper.Mapper<MyOrder> {
 
     MyOrder queryOrderAndUserByOrderId(Integer id);
+
+    MyOrder queryOrderAndUserAndOrderDetailsByOrderId(Integer id);
 }

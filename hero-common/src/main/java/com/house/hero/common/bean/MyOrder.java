@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class MyOrder implements Serializable {
@@ -36,4 +37,10 @@ public class MyOrder implements Serializable {
      * User
      */
     private User user;
+
+    /**
+     * 详情信息(理解为产品详情)
+     */
+    private List<OrderDetail> orderDetails;
+
 }
