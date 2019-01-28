@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class FreemarkerController {
      * @ Param [modelMap]
      * @ return java.lang.String
      **/
-    @RequestMapping("/test")
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
     public String testRecords(ModelMap modelMap){
 
         List<Record> recordList = recordService.selectRecords();
@@ -39,7 +40,7 @@ public class FreemarkerController {
      * @ Param []
      * @ return java.lang.String
      **/
-    @RequestMapping("/index")
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String index(){
 
         return "homepage/index";

@@ -4,6 +4,7 @@ import com.house.hero.common.bean.Record;
 import com.house.hero.service.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class RecordController {
      * @ Param []
      * @ return java.util.List<com.hero.hero.common.bean.Record>
      **/
-    @RequestMapping("/getRecords")
+    @RequestMapping(value = "/getRecords",method = RequestMethod.GET)
     public List<Record> selectRecords(){
 
         List<Record> recordList = recordService.selectRecords();
