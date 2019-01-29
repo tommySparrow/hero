@@ -33,11 +33,4 @@
         </plugin>
     </plugins>
 
-    <!--扫描.xml配置-->
-    <mappers>
-        <mapper resource="mapper/RecordMapper.xml" />
-        <mapper resource="mapper/MyOrderMapper.xml" />
-        <mapper resource="mapper/UserMapper.xml" />
-    </mappers>
-
 </configuration>
