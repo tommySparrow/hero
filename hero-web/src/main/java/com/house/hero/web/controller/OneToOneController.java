@@ -2,6 +2,7 @@ package com.house.hero.web.controller;
 
 import com.house.hero.common.bean.MyOrder;
 import com.house.hero.service.OneToOneService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @ Description：一对一demo
  * @ throws
  */
+@Api(tags = "oneToOne")//使用中文'解释',会导致swagger-ui.html页面对应的方法无法展开
 @RestController
 public class OneToOneController {
 
