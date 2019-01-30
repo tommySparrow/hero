@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script>
+    function getUUID() {
+        var id = setTimeout('0');
+        clearTimeout(id);
+        return id;
+    };
+
+</script>
+<body>
+<div class="authCode">
+    <input id="coldValue" name="coldValue" type="text"  placeholder="验证码" >
+    <img id="validateCode" class="authCodeImg" src="./getCode?time= 123456"
+         onclick="this.src='./getCode?time='+new Date().getTime();">
+</div>
+</body>
+</html>
