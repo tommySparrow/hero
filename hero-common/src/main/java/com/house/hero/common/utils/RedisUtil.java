@@ -9,9 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Redis工具类
- *
- * @author gp6
- * @date 2018-12-28
  */
 public class RedisUtil {
 

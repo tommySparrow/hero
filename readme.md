@@ -6,3 +6,5 @@ com.house.hero.web.controller
 com.house.hero.common.utils(工具类)
     1.HashUtils:哈希MD5加密
     2.QRCodeUtil:二维码工具类
+    3.ImageUtil:验证码工具类
+    4.RedisUtil:Redis工具类

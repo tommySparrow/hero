@@ -16,9 +16,6 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * Redis配置
- *
- * @author gp6
- * @date 2018-12-28
  */
 @Configuration
 @PropertySource("classpath:/application.properties")
