@@ -8,3 +8,11 @@ com.house.hero.common.utils(工具类)
     2.QRCodeUtil:二维码工具类
     3.ImageUtil:验证码工具类
     4.RedisUtil:Redis工具类
+    
+    
+    
+    
+    
+备注:
+    1.swagger访问路径
+     http://localhost:8080/swagger-ui.html
