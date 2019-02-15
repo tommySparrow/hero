@@ -2,11 +2,14 @@ package com.house.hero.web.controller;
 
 import com.house.hero.common.utils.ImageUtil;
 import com.house.hero.common.utils.RedisUtil;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,7 +39,9 @@ public class VerifyCodeController {
      * @param response
      * @return
      */
-    @RequestMapping(value = "/getCode")
+    @ApiOperation(value="获取随机数", notes="时间随机数做key值,生成四位随机数")
+    @ApiImplicitParam(name = "time", value = "随机数key值", required = true, paramType = "query",dataType = "Integer")
+    @RequestMapping(value = "/getCode",method = RequestMethod.GET)
     public void getCode(@RequestParam(value = "time") String randomUuId,HttpServletResponse response) {
 
         if (StringUtils.isEmpty(randomUuId)) {
