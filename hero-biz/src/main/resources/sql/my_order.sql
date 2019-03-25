@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for order
 -- ----------------------------
-DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `my_order`;
 CREATE TABLE `order`  (
   `id` int(11) NOT NULL COMMENT '主键',
   `user_id` int(11) NULL DEFAULT NULL COMMENT '对应user表主键id',

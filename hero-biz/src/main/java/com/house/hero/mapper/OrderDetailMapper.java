@@ -5,4 +5,5 @@ import com.house.hero.common.bean.OrderDetail;
 
 public interface OrderDetailMapper extends Mapper<OrderDetail> {
 
+    OrderDetail selectOrderDetailsById(Integer id);
 }

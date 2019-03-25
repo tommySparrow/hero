@@ -20,9 +20,10 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for oder_detail
 -- ----------------------------
-DROP TABLE IF EXISTS `oder_detail`;
+DROP TABLE IF EXISTS `order_detail`;
 CREATE TABLE `oder_detail`  (
   `id` int(11) NOT NULL COMMENT '主键',
+  `order_id` int(11) DEFAULT NULL COMMENT '对应my_order表主键',
   `total_price` int(11) NULL DEFAULT NULL COMMENT '总价',
   `status` int(11) NULL DEFAULT NULL COMMENT '状态',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
