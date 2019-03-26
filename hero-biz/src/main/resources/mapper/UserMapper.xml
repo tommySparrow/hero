@@ -11,4 +11,10 @@
     id, user_name, password, create_time
   </sql>
 
+  <select id="selectUserByUsername" resultMap="BaseResultMap">
+
+    select <include refid="Base_Column_List"/>
+    from user u
+    where u.user_name = #{username}
+  </select>
 </mapper>

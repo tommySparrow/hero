@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class User implements Serializable {
@@ -31,4 +32,9 @@ public class User implements Serializable {
      */
     @ApiModelProperty(value = "用户创建时间")
     private Date createTime;
+
+    /**
+     * 角色
+     */
+    private List<Role> roleList;
 }
