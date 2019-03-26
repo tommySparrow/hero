@@ -13,4 +13,11 @@
   <sql id="Base_Column_List" >
     id, parent_id, name, url, perms, type, order_num
   </sql>
+
+  <select id="selectMenuList" resultType="com.house.hero.common.bean.Menu">
+    select * from menu m
+    where m.id
+      in
+  (1,2,3,4)
+  </select>
 </mapper>

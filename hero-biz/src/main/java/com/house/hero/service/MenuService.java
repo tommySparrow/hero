@@ -20,6 +20,6 @@ public class MenuService {
     private MenuMapper menuMapper;
 
     public List<Menu> selectMenuList() {
-        return  menuMapper.select(new Menu());
+        return  menuMapper.selectMenuList();
     }
 }
