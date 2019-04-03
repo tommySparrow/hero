@@ -4,6 +4,7 @@ import com.house.hero.common.bean.Employee;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -81,8 +82,8 @@ public class StreamMid {
     @Test
     public void testStreamMidOfFlatMap (){
         List<String> distinctStrs = Arrays.stream(strs)
-                .map(str -> str.split(""))  // 映射成为Stream<String[]>
-                .flatMap(Arrays::stream)  // 扁平化为Stream<String>
+                .map(str -> str.split(""))  // 映射成为Stream<String[]>[java8] [is]....
+                .flatMap(Arrays::stream)  // 扁平化为Stream<String>[java8is...]
                 .distinct()
                 .collect(Collectors.toList());
 
@@ -114,5 +115,16 @@ public class StreamMid {
         Optional<Employee> second = list.stream().filter(e -> e.getAge() > 19).findAny();//findAny
         System.out.println(second);
 
+        System.out.println("------------------------------------");
+        long count = list.stream().map(Employee::getAge)
+                .count();//计算总条数
+        System.out.println(count);
+        Optional<Integer> max = list.stream().map(Employee::getAge)
+                .max(Comparator.comparingInt(x -> x));//取最大值
+        System.out.println(max);
+
+        List<Employee> employees =
+                list.stream().sorted(Comparator.comparingInt(Employee::getAge)).collect(Collectors.toList());//按年龄排序
+        System.out.println(employees);
     }
 }
