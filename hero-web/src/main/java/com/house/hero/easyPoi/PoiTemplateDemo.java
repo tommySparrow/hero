@@ -45,6 +45,11 @@ public class PoiTemplateDemo {
         // 获取导出excel指定模版，第二个参数true代表显示一个Excel中的所有 sheet
         TemplateExportParams params = new TemplateExportParams("easyPOIExample.xlsx", true);
         Map<String, Object> mapData = new HashMap<>();
+
+        //map属性(合计属性)
+        mapData.put("date", "2014-12-25");
+        mapData.put("money", 2000000.00);
+        //list数据
         mapData.put("list", goodsList);//导出list集合
 
         try {
