@@ -1,4 +1,4 @@
-package com.house.hero.easyPoi;
+package com.house.hero.poi;
 
 import com.house.hero.common.bean.ReportDto;
 import lombok.extern.slf4j.Slf4j;
