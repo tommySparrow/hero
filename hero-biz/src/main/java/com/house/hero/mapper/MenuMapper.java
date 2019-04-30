@@ -7,5 +7,10 @@ import java.util.List;
 
 public interface MenuMapper extends Mapper<Menu> {
 
-    List<Menu> selectMenuList();
+    /**
+     * @ return
+     */
+    default List<Menu> selectMenuList() {
+        return null;
+    }
 }
