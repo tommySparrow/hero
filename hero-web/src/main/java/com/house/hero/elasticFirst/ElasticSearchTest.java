@@ -47,7 +47,8 @@ public class ElasticSearchTest {
     @Test
     public void testQueryString(){
 
-        QueryBuilder queryBuilder = QueryBuilders.queryStringQuery("内容很惊艳").defaultField("content");
+        QueryBuilder queryBuilder = QueryBuilders.queryStringQuery("房间的好处").defaultField("content");
+
         search(queryBuilder);
     }
 
@@ -56,6 +57,9 @@ public class ElasticSearchTest {
         SearchResponse searchResponse = client.prepareSearch("index_hello")
                 .setTypes("article")
                 .setQuery(queryBuilder)
+                //设置分页信息
+                .setFrom(0)
+                .setSize(5)
                 .get();
         //获取查询结果
         SearchHits hits = searchResponse.getHits();

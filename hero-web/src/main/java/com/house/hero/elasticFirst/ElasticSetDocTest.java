@@ -26,14 +26,15 @@ public class ElasticSetDocTest {
 //        firstTypeSetDoc(client);
         //第二种添加doc的方式
 
-        Article article = new Article();
-        article.setId(2L);
-        article.setTittle("打飞机卡机付款方");
-        article.setContent("房间的撒可富近段时间发快递");
-        ObjectMapper objectMapper = new ObjectMapper();
-        String jsonStr = objectMapper.writeValueAsString(article);
-        client.prepareIndex("index_hello","article","2").setSource(jsonStr, XContentType.JSON).get();
-
+        for (int i = 13;i< 100;i++) {
+            Article article = new Article();
+            article.setId(i);
+            article.setTittle("打飞机卡机付款方34567891012"+ i);
+            article.setContent("房间的撒可富近段时间发快递34567891012" + i);
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonStr = objectMapper.writeValueAsString(article);
+            client.prepareIndex("index_hello", "article", ""+ i).setSource(jsonStr, XContentType.JSON).get();
+        }
         //3.关闭连接
         client.close();
     }
