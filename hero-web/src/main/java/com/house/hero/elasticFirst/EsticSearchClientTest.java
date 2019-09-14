@@ -24,11 +24,11 @@ public class EsticSearchClientTest {
         client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"),9301));
         client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"),9302));
         client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"),9303));
-        //使用client创建索引库
+        //3.使用client创建索引库
         client.admin().indices().prepareCreate("index_hello")
                 //执行方法
                 .get();
-        //关闭连接
+        //4.关闭连接
         client.close();
     }
 }
