@@ -1,4 +1,4 @@
-package com.house.hero.java8;
+package com.house.hero.java.java8;
 
 import org.junit.Test;
 

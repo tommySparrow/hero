@@ -1,4 +1,4 @@
-package com.house.hero;
+package com.house.hero.java;
 
 import com.house.hero.common.bean.Book;
 import org.springframework.context.ApplicationContext;

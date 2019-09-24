@@ -1,4 +1,4 @@
-package com.house.hero.builder;
+package com.house.hero.java.builder;
 
 /**
  * 建造者模式

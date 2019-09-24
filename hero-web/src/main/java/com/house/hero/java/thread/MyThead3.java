@@ -1,4 +1,4 @@
-package com.house.hero.thread;
+package com.house.hero.java.thread;
 
 public class MyThead3 extends Thread {
 

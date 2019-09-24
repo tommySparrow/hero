@@ -1,4 +1,4 @@
-package com.house.hero.javacapacity;
+package com.house.hero.java.javacapacity;
 
 /**
  * 容器测试

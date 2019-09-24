@@ -1,4 +1,4 @@
-package com.house.hero.thread;
+package com.house.hero.java.thread;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
