@@ -7,9 +7,13 @@ package com.house.hero.java.javacapacity;
 public class testCapacity {
 
     public static void main(String[] args) {
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add("123");
-        myArrayList.add("abc");
-        System.out.println(myArrayList.get(0));
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add("aaa");
+        myLinkedList.add("bbb");
+        myLinkedList.add("vvv");
+        myLinkedList.add("vvv");
+        myLinkedList.add("vvv");
+
+        System.out.println(myLinkedList.get(1));
     }
 }
