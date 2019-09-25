@@ -157,6 +157,11 @@
             <artifactId>transport</artifactId>
             <version>5.6.8</version>
         </dependency>
+        <!-- mogondb-->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+        </dependency>
 
     </dependencies>
 
